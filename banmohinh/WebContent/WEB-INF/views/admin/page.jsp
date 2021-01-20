@@ -7,7 +7,7 @@
     <base href="${pageContext.servletContext.contextPath}/">
 </head>
 <body>
-	<nav class="navbar-default navbar-side" role="navigation">
+	<!--  <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
               
@@ -15,7 +15,7 @@
                         <a href="#"><i class="fa fa-home "></i>Home</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-user"></i>User</a>
+                        <a href="#"><i class="fa fa-user"></i>Customer</a>
                     </li>
 
                     <li>
@@ -28,7 +28,7 @@
                 </ul>
                             </div>
 
-        </nav>
+        </nav>-->
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper" >
             <div id="page-inner">

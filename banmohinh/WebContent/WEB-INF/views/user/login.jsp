@@ -1,115 +1,100 @@
 <%@ page language="java"  pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <!DOCTYPE html>
 <html>
 <head>
    <meta charset="UTF-8">
-   <title>Insert title here</title>
+    <base href="${pageContext.servletContext.contextPath}/">
+     <script type="text/javascript" src="js/jquery-3.5.1.js"></script>
+    <script type="text/javascript">
+    	$(document).ready(function (){
+    		$('.get').click(function(){
+    			var email = prompt("Please enter your name", "Mề ta nì sa la hế hê! Ề ế ê ê ê");
+    			$.ajax({
+    				type: 'POST',
+    				url:'shop/forgot/'+email+'.htm',
+    				success: function(data)
+    				{
+    					alert(data);
+    				}
+    				
+    			});
+    		});
+    			
+    	});
+    
+    
+    </script>
+ 	
    <style>
-   
-   			body 
-   			{
-    			text-align: center;
-			}
-   			h1
-   			{
-   				text-align:center;
-   				font-size: 50px;
-   				padding: 50px;
-   				font-family:  courier;
-   				color: #990073;	
-   			}
-   			input
-   			{
+div.login-div form
+ {
+  border-radius: 5px;
+  background-color: #ffffff;
+  padding: 20px;
+  width: 75%;
+  border-top: 10px solid #00b3b3;
+  margin-left: 200px;
+}
+div.login-div h1 
+{
+   	text-align:center;
+   	font-size: 50px;
+   	padding: 50px;
+   	font-family:  courier;
+    color:#003333;	
    			
-   				size: 300px;	
-   			}
-   			form 
-   				{
-    		display: inline-block;
-				}
-   
+}
+
+div.login-div form>input,label {
+
+  margin-left: 300px;
+  margin-bottom: 30px;
+  color:#003333;
+  font-size: 20px;
+  height: 50px;
+}
+
+div.login-div form>button {
+
+  margin-left: 450px;
+	  color: white;
+	   display: inline-block;
+	  padding: 25px 10px;
+	  border: none;
+	  cursor: pointer;
+	  font-size: 20px;
+	  width: 50%;
+  
+}
+div.login-div button:hover 
+	{
+	  opacity: 0.8;
+	}
    </style>
 </head>
 <body > 
 		
 		
-		<div id="main" class="column1 boxed no-breadcrumbs"><!-- main -->
-
-			<div class="container">
-			<div class="row main-content-wrap">
-
-			<!-- main content -->
-			<div class="main-content col-lg-12">
-
-			
-	<div id="content" role="main">
-				
-	<article class="post-8 page type-page status-publish hentry">
-				
-				
-      <div class="page-content">
-			<div class="woocommerce">
-
-			<div class="featured-box align-left porto-user-box">
-			<div class="box-content">
-		
-			<div class="u-columns col2-set" id="customer_login">
-
-		
-				<h1>Đăng nhập</h1>
-
-				<form class="woocommerce-form woocommerce-form-login login" method="post" >
-
-					
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<label for="username" style="font-size:25px">Tên tài khoản hoặc địa chỉ email&nbsp;
-							<span style="color:red">*</span>
-						</label>
-						<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="username" autocomplete="username" value="" size="100" style="height:55px;font-size:20px">					
-						<br><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<label for="password"style="font-size:25px">Mật khẩu&nbsp;
-						<span style="color:red">*</span></label>
-						<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="password" id="password" autocomplete="current-password" size="100"  style="height:55px;font-size:20px">
-						<span class="show-password-input"></span>
-						</span>
-			
-
-					<p class="status" style="display: none"></p>
-
-					<p class="form-row">
-						<p class="woocommerce-LostPassword lost_password">
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							<a href="https://takishop.vn/tai-khoan/quen-mat-khau" style="font-size:25px"> Quên mật khẩu?</a>
-						</p>
-						<br><br>	
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<button type="submit" class="woocommerce-Button button" name="login" value="Đăng nhập" style="padding:30px; width: 150px;font-size:25px;">Đăng nhập</button>
+	<div class="login-div"><!-- main -->
+		<form:form action="shop/login.htm" modelAttribute="account" method="post"  autocomplete="off">
+		  <h1 style=" color:#003333">Đăng nhập</h1>
 						
-					</p>
-					
-	
-				</form>
-
-				
-			
-		</div>
+			<label for="reg_email">Địa chỉ email&nbsp;<span class="required" style="color:red" >*</span></label>				
+			<form:input path="email" style="width:50% " type="text" placeholder="Your Email.." autocomplete="off"/>
+				<br><br>
+						
+			<label>Mật khẩu<strong style="color:red">*</strong></label>
+			<br>
 		
-			</div>
-			</div>
-			</div>
-	</div>
-	</article>
-
-			<div class="">
+			<form:input path="password" style="width:50%" type="password" placeholder="Your Password.." autocomplete="off"/>
 			
-						</div>
-
-		
-	</div>
-
+			<a  class="get" style="font-size:20px; margin-left: 700px;color:#006666;margin-top:  ">Quên mật khẩu?</a>
+			<br><br>	
+			
+		    <button type="submit" style="padding: 20px; width: 150px;background-color: #008080;border-radius: 20px">Login</button>
+			
+		</form:form>
 		
 
 </div><!-- end main content -->

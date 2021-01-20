@@ -24,12 +24,12 @@
 	
 	input[type=text], input[type=password] {
 	  width: 50%;
-	  padding: 15px 40px;
-	  margin: 0px 400px -25px 76px;
+	  padding: 20px 40px;
+	  margin: 40px 600px -100px 170px;
 	  display: inline-block;
 	  border: 1px solid #ccc;
 	  box-sizing: border-box;
-	  font-size: 15px;
+	  font-size: 18px;
 	}
 	
 	button {
@@ -37,7 +37,7 @@
 	  color: white;
 	   display: inline-block;
 	  padding: 25px 10px;
-	  margin: 20px 0 30px 270px;
+	  margin: 45px 0 30px 270px;
 	  border: none;
 	  cursor: pointer;
 	  font-size: 20px;
@@ -56,6 +56,7 @@
 	
 	.imgcontainer {
 	  text-align: left;
+	  width: 120%;
 	  margin: -80px -30px -30px 200px;
 	}
 	
@@ -93,18 +94,18 @@
 <form:form action="admin/login.htm" method="post" modelAttribute="account">
 	  <div class="container">
 	     <div class="imgcontainer">
-	    <img src="images/logo.png" alt="Avatar" class="avatar" >
+	    <img src="images/logow.jpg" alt="Avatar" class="avatar" >
 	  </div>
 	    <br>
-	    <input type="text" placeholder="Enter Email" name="email" required>
+	    <input type="text" placeholder="Your Email.." name="email" required>
 	    <br>
 	    <br>
 	     <br><br>
-	    <input type="password" placeholder="Enter Password" name="password" required>
+	    <input type="password" placeholder="Your Password.." name="password" required>
 	     <br><br>
-	    <button type="submit" style="padding: 15px; width: 150px">Login</button>
+	    <button type="submit" style="padding: 20px; width: 150px;background-color: #008080;border-radius: 20px">Login</button>
 	    <br>
-	    <span class="psw">Forgot <a href="#">password?</a></span>
+	    <span class="psw" > <a href="admin/forgot.htm">Forgot password?</a></span>
 	  </div>
 </form:form>
 

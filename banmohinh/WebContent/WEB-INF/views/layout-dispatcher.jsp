@@ -4,12 +4,11 @@
 	{
 		pageContext.forward("admin-layout.jsp");
 	}
-
-	//else if(view.startsWith("admin/"))
-	//{
-		//pageContext.forward("admin-login.jsp");
-	//}
-	else 
+	else if(view.startsWith("login/"))
+	{
+	pageContext.forward("admin-login-layout.jsp");
+	}
+	else if(view.startsWith("user/"))
 	{
 	pageContext.forward("user-layout.jsp");
 	}

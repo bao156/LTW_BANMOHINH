@@ -1,9 +1,10 @@
 <%@ page language="java"  pageEncoding="UTF-8"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <!DOCTYPE html>
 <html>
 <head>
    <meta charset="UTF-8">
-   <title>Insert title here</title>
+    <base href="${pageContext.servletContext.contextPath}/">
    <style>
    			h1
    			{
@@ -11,110 +12,95 @@
    				font-size: 50px;
    				padding: 50px;
    				font-family:  courier;
-   				color: #990073;	
+   				color:#003333;	
    			}
    			div.u-columns col2-set
    			{
    				font-size: 30px;
    			
    			}
-   			input
+   			div.div-register 
    			{
-   				font-size: 20px;
+   				
+   				height: 700px;
    			}
+   			div.div-register form
+   			{
+   				background-color: white;
+   				width:80%;
+   				margin-left: 200px;
+   				border-top:10px solid #00b3b3;
+   			}
+   			div.div-register form>p
+   			{
+   			width:40%;
+   
+   		
+   			}
+   			div.div-register form>p>input
+   			{
+   			height: 60px;
+   
+   		
+   			}
+   			
    
    </style>
 </head>
 <body>
 		
-		
-		<div id="main" class="column1 boxed no-breadcrumbs"><!-- main -->
+	<div class="div-register"><!-- main -->
 
-			<div class="container">
-			<div class="row main-content-wrap">
-
-			<!-- main content -->
-			<div class="main-content col-lg-12">
-
-			
-	<div id="content" role="main">
-				
-	<article class="post-8 page type-page status-publish hentry">
-				
-				
-      <div class="page-content">
-			<div class="woocommerce">
-
-			<div class="featured-box align-left porto-user-box">
-			<div class="box-content" style="font-size:18px">
-		
-		
-		
+		<form:form action="shop/register.htm" modelAttribute="user" method="post" >
 			
 			<h1>Đăng ký</h1>
-			
-				<form method="post" class="woocommerce-form woocommerce-form-register register">
-			
-					<p class="form-row form-row-first">
-						<label for="reg_billing_first_name">First Name<span class="required">*</span></label>
-						<input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="billing_first_name" id="reg_billing_first_name" value="">	
-					</p>
+			<p class="form-row form-row-first" style="margin-left: 50px">
+				<label for="reg_billing_first_name">First Name<span class="required">*</span></label>
+				<form:input path="firstName" placeholder="Your Frist Name.." />	
+			</p>
 					
-					<p class="form-row form-row-last">
-						<label for="reg_billing_last_name">Last Name<span class="required">*</span></label>
-						<input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="billing_last_name" id="reg_billing_last_name" value="">
-					</p>
-					<div class="clear">
-					</div>
+			<p class="form-row form-row-last" style="margin-right: 100px">
+				<label for="reg_billing_last_name">Last Name<span class="required">*</span></label>
+				<form:input path="lastName" placeholder="Your Last Name .."/>
+			</p>
 					
-								
-					<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-									<label for="reg_email">Địa chỉ email&nbsp;<span class="required">*</span></label>
-									<input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email" id="reg_email" autocomplete="email" value="">					
-					</p>
+			<p class="form-row form-row-last" style="margin-right: 100px">
+				<label for="reg_billing_last_name">Địa chỉ<span class="required">*</span></label>
+				<form:input path="address" placeholder="Your Address.."/>
+			</p>
 			
 								
-					<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-							<label for="reg_password">Mật khẩu&nbsp;<span class="required">*</span></label>
-						    <span class="password-input"><input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password" id="reg_password" autocomplete="new-password"><span class="show-password-input"></span></span>
-					</p>
-					<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-							<label for="reg_password">Ngày sinh	&nbsp;<span class="required">*</span></label>
-						    <span ><input type="date" class="woocommerce-Input woocommerce-Input--text input-text" name="date"><span></span></span>
-					</p>
+			<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide" style="margin-left: 50px">
+				<label for="reg_email">Email&nbsp;<span class="required">*</span></label>
+				<form:input path="email" placeholder="Your Email.."/>					
+			</p>
+					
+			<p class="form-row form-row-last" style="margin-right: 100px">
+				<label for="reg_billing_last_name">Số điện thoại<span class="required">*</span></label>
+				<form:input path="phone" placeholder="Your Phone.."/>
+			</p>
 			
-								
-					<div class="woocommerce-privacy-policy-text">
-						<p>Thông tin cá nhân của bạn sẽ được sử dụng để tăng trải nghiệm sử dụng website, quản lý truy cập vào tài khoản của bạn, và cho các mục đích cụ thể khác được mô tả trong <a href="https://takishop.vn/chinh-sach-bao-mat-thong-tin" class="woocommerce-privacy-policy-link" target="_blank">chính sách riêng tư</a>.</p>
-					</div>
-					<p class="status" style="display: none;">
-					</p>
-			
-					<p class="woocommerce-form-row form-row">
-							<input type="hidden" id="woocommerce-register-nonce" name="woocommerce-register-nonce" value="abccc6dae3"><input type="hidden" name="_wp_http_referer" value="/tai-khoan">						
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							<button type="submit" class="woocommerce-Button button" name="register" value="Đăng ký" style="padding:20px" >Đăng ký</button>
-					</p>	
-				</form>
+					
+			<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide" style="margin-left: 50px">
+				<label for="reg_password">Mật khẩu&nbsp;<span class="required">*</span></label>
+				<input type="password" name="password" placeholder="Your Password.."/>
+			</p>
+			<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide" style="margin-left: 50px">
+				<label for="reg_password">Ngày sinh	&nbsp;<span class="required">*</span></label>
+				<form:input type="date" path="birthday"/>
+			</p>
 
-		
-		
+			<p class="woocommerce-form-row form-row">
+				<input type="hidden" id="woocommerce-register-nonce" name="woocommerce-register-nonce" value="abccc6dae3"><input type="hidden" name="_wp_http_referer" value="/tai-khoan">						
+				<button type="submit" onlick="myFunction()"style="padding: 20px; width: 150px;background-color: #008080;border-radius: 20px;margin-left: 550px" onclick="myFunction()">Xác nhận</button>
+			</p>	
+		</form:form>
 
-</div>
-</div>
-				</div>
-	</article>
-
-			<div class="">
-			
-						</div>
-
-		
-	</div>
-
-		
-
-</div><!-- end main content -->
-
+	</div><!-- end main content -->
+		<script type="text/javascript">      
+		function myFunction() {
+			alert("Đăng kí thành công")
+			}
+    </script>
 </body>
 </html>
